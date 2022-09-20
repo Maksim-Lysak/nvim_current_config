@@ -58,3 +58,15 @@ require("nvim-tree").setup({
 require("hop").setup({
 	keys = 'etovxqpdygfblzhckisuran'
 })
+
+-- nvim-comment
+require('nvim_comment').setup()
+
+-- bufferline
+require("bufferline").setup{
+	options = {
+		show_buffer_close_icons = false,
+    show_close_icon = false,
+
+	}
+}

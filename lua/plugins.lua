@@ -7,6 +7,7 @@ return require('packer').startup(function(use)
 	use 'kyazdani42/nvim-web-devicons'
   use 'kyazdani42/nvim-tree.lua'
 	use "terrortylor/nvim-comment"
-	use {'phaazon/hop.nvim', branch = 'v2'} -- optional but strongly recommended
+	use {'phaazon/hop.nvim', branch = 'v2'}
+	use {'akinsho/bufferline.nvim', tag = 'v2.*'}
 end)
 

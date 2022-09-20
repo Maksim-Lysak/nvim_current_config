@@ -6,6 +6,10 @@ local exec = vim.api.nvim_exec  -- execute Vimscript
 -- настройки для nvim-tree
 g.loaded = 1
 g.loaded_netrwPlugin = 1
+
+-- bufferlien
+opt.termguicolors = true
+
 -- номере строки
 opt.number = true
 
