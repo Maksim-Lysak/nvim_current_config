@@ -4,6 +4,9 @@ require('onedark').setup {
 }
 require('onedark').load()
 
+-- telescope
+require('telescope').setup()
+
 -- luline
 require('lualine').setup {
   options = {

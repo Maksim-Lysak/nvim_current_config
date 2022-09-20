@@ -13,3 +13,9 @@ keymap("", 'nf', ':NvimTreeFindFile<CR>', opts)
 keymap("", ".w", ":HopWordCurrentLine<cr>", opts)
 keymap("", ".l", ":HopLine<cr>", opts)
 keymap("", ".s", ":HopChar2<cr>", opts)
+
+-- telescope
+keymap("", ".ff", ":Telescope find_files<CR>", opts)
+keymap("", ".fg", ":Telescope live_grep<CR>", opts)
+keymap("", ".fb", ":Telescope buffers<CR>", opts)
+keymap("", ".fh", ":Telescope help_tags<CR>", opts)
