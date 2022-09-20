@@ -3,9 +3,12 @@ local opt = vim.opt	    -- global / buffer / windows-scoped options
 local cmd = vim.cmd     -- выполнять команды Vim
 local exec = vim.api.nvim_exec  -- execute Vimscript
 
+-- настройки для nvim-tree
+g.loaded = 1
+g.loaded_netrwPlugin = 1
 -- номере строки
 opt.number = true
---[[ Поиск ]]--
+
 -- Игнорировать регистр при поиске
 opt.ignorecase = true
 
