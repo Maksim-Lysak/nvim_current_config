@@ -53,3 +53,8 @@ require("nvim-tree").setup({
     dotfiles = true,
   },
 })
+
+-- hop
+require("hop").setup({
+	keys = 'etovxqpdygfblzhckisuran'
+})
