@@ -86,3 +86,29 @@ require("nvim-autopairs").setup({
 	disable_filetype = { "TelescopePrompt" , "vim" },
 })
 
+-- tree-sitter
+require'nvim-treesitter.configs'.setup {
+
+	-- Нужные парсеры
+	ensure_installed = { 
+		"css", "html", "json", "scss", "javascript", "python", "lua", "typescript","vue", "dockerfile"
+	},
+
+	-- Устанавливать парсеры синхронно
+	sync_install = false,
+
+	-- Подсветка
+	highlight = {
+
+		-- Включить расшируение
+		enable = true,
+		disable = {},
+	},
+
+	indent = {
+
+		-- Включить indent
+		enable = false,
+		disable = {},
+	}
+}

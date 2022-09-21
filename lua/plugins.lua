@@ -23,5 +23,9 @@ return require('packer').startup(function(use)
 	use 'hrsh7th/cmp-nvim-lua'
 	use	'williamboman/nvim-lsp-installer'
 	use {'lewis6991/gitsigns.nvim', tag = 'release'}
+	  use {
+    'nvim-treesitter/nvim-treesitter',
+     run = ':TSUpdate'
+  }
 end)
 
