@@ -2,8 +2,8 @@ local keymap = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
 -- bufferline
-keymap('n', '<Tab>', ':BufferLineCycleNext<CR>', opts)
-keymap('n', '<S-Tab>', ':BufferLineCyclePrev<CR>', opts)
+keymap('n', '>', ':BufferLineCycleNext<CR>', opts)
+keymap('n', '<', ':BufferLineCyclePrev<CR>', opts)
 
 -- nvim-tree
 keymap("", 'nn', ':NvimTreeRefresh<CR>:NvimTreeToggle<CR>', opts)
@@ -19,3 +19,8 @@ keymap("", ".ff", ":Telescope find_files<CR>", opts)
 keymap("", ".fg", ":Telescope live_grep<CR>", opts)
 keymap("", ".fb", ":Telescope buffers<CR>", opts)
 keymap("", ".fh", ":Telescope help_tags<CR>", opts)
+
+-- cmp
+keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+keymap("n", "gR", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+keymap("n", ".l", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
