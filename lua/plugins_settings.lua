@@ -1,4 +1,3 @@
-local cmp = require('cmp')
 -- theme
 require('onedark').setup {
     style = 'warm'
@@ -38,45 +37,6 @@ require('lualine').setup {
   tabline = {},
   extensions = {}
 }
-
--- cmp
-cmp.setup{
-	snippet = {
-
-		-- REQUIRED - you must specify a snippet engine
-		expand = function(args)
-			require'luasnip'.lsp_expand(args.body) -- Luasnip expand
-		end,
-	},
-
-	-- Клавиши, которые будут взаимодействовать в nvim-cmp
-	mapping = {
-
-		-- Вызов меню автодополнения
-		['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
-		['<CR>'] = cmp.config.disable,                      -- Я не люблю, когда вещи автодополняются на <Enter>
-		['<C-y>'] = cmp.mapping.confirm({ select = true }), -- А вот на <C-y> вполне ок
-
-		-- Используем <C-e> для того чтобы прервать автодополнение
-		['<C-e>'] = cmp.mapping({
-			i = cmp.mapping.abort(), -- Прерываем автодополнение
-			c = cmp.mapping.close(), -- Закрываем автодополнение
-		}),
-		['<C-p>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 'c' }),
-		['<C-n>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 'c' }),
-	},
-
-	sources = cmp.config.sources({
-		{ name = 'nvim_lsp' },                -- LSP 👄
-		{ name = 'nvim_lsp_signature_help' }, -- Помощь при введении параметров в методах 🚁
-		{ name = 'luasnip' },                 -- Luasnip 🐌
-		{ name = 'buffer' },                  -- Буфферы 🐃
-		{ name = 'path' },                    -- Пути 🪤
-	}, {
-	}),
-}
-
-
 
 -- nvim-tree
 require("nvim-tree").setup({
@@ -152,43 +112,3 @@ require'nvim-treesitter.configs'.setup {
 		disable = {},
 	}
 }
-
--- lsp-installer
--- Берем плагин для установки LSP
-local lspinstaller = require'nvim-lsp-installer'
-
--- Конфигурация для LSP
-local lspconfig = require'lspconfig'
-
--- Конфигурируем lsp-installer
-lspinstaller.setup{
-	ensure_installed = {
-		'cssls',                  -- CSS
-		'emmet_ls',               -- HTML
-		'jedi_language_server',   -- Python
-		'tsserver',               -- Typescript, Javascript
-		'volar'                   -- Vue
-	},
-}
-
--- Возможности редактора
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-
--- Добавляем возможность использовать сниппеты
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-
--- ОТКЛЮЧЕНИЕ ВИРТУАЛЬНОГО ТЕКСТА
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-    vim.lsp.diagnostic.on_publish_diagnostics, {
-        virtual_text = false
-    }
-)
-
-for _, server in ipairs(lspinstaller.get_installed_servers()) do
-  lspconfig[server.name].setup{
-    flags = {
-      debounce_text_changes = 150,
-    },
-    capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
-  }
-end

@@ -20,7 +20,3 @@ keymap("", ".fg", ":Telescope live_grep<CR>", opts)
 keymap("", ".fb", ":Telescope buffers<CR>", opts)
 keymap("", ".fh", ":Telescope help_tags<CR>", opts)
 
--- cmp
-keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-keymap("n", "gR", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
-keymap("n", ".l", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
