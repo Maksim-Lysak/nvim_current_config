@@ -1,10 +1,8 @@
 local keymap = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
-
 -- Переназначаем клавишу 'leader'
 -- keymap('', '<Space>', '<Nop>', opts)
--- vim.g.mapleader = ' '
--- vim.g.maplocalleader = ' '
+vim.g.mapleader = ','
 
 -- 'jj' в замен 'Esc' 
 keymap('i', 'jk', '<Esc>', opts)
@@ -14,6 +12,9 @@ keymap('', '<M-o>', ':<Esc>o', opts)
 
 -- убрать выделение с текста
 keymap('n', '<C-l>', ':noh<CR>', opts)
+
+-- перевод курсора  в конец строки
+-- keymap('i', '<S-Space>', ':<Esc>', opts)
 
 -- работа с буфером
 keymap('', 'gw', ':bd<CR>', opts)                   -- закрыть текущий буфер
