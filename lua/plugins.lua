@@ -31,6 +31,7 @@ return require('packer').startup(function(use)
 	use 'nvim-lua/popup.nvim'
 	use 'kylechui/nvim-surround'
 	use "folke/trouble.nvim"
+	use({"glepnir/lspsaga.nvim", branch = "main",})
 end)
 
 

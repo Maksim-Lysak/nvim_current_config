@@ -2,7 +2,7 @@ local keymap = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 -- Переназначаем клавишу 'leader'
 -- keymap('', '<Space>', '<Nop>', opts)
-vim.g.mapleader = ','
+vim.g.mapleader = ' '
 
 -- 'jj' в замен 'Esc' 
 keymap('i', 'jk', '<Esc>', opts)
