@@ -18,6 +18,7 @@ return require('packer').startup(function(use)
 	use 'windwp/nvim-ts-autotag'
 	use 'neovim/nvim-lspconfig'
 	use	'williamboman/nvim-lsp-installer'
+	use({"glepnir/lspsaga.nvim", branch = "main",})
 	use	'L3MON4D3/LuaSnip'
 	use 'hrsh7th/nvim-cmp'
 	use 'hrsh7th/cmp-path'
@@ -28,10 +29,8 @@ return require('packer').startup(function(use)
 	use	'saadparwaiz1/cmp_luasnip'
 	use	'hrsh7th/cmp-nvim-lsp-signature-help'
 	use 'onsails/lspkind-nvim'
-	use 'nvim-lua/popup.nvim'
 	use 'kylechui/nvim-surround'
 	use "folke/trouble.nvim"
-	use({"glepnir/lspsaga.nvim", branch = "main",})
 end)
 
 

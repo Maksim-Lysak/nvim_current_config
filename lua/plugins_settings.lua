@@ -216,7 +216,7 @@ cmp.setup{
 		{ name = 'luasnip' },                 -- Luasnip 🐌
 		{ name = 'buffer' },                  -- Буфферы 🐃
 		{ name = 'path' },                    -- Пути 🪤
-		{ name = 'cmdline'}
+		-- { name = 'cmdline'}
 	}, {
 	}),
 	formatting = {
